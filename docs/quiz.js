@@ -115,30 +115,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderMatch(q, idx, state) {
-    const sel = getInput(idx) || {}; // { 0: selectedIndex, 1: selectedIndex, ... }
+    const sel = getInput(idx) || {};
+    const shuffled = q._shuffled || q.pairs.map((_, i) => i);
     let h = `<div class="quiz-question">Match the Simple expressions with their Upgrade equivalents:</div>`;
-    h += '<div class="match-grid"><div><div class="match-col-header">Simple</div>';
+    h += '<div style="display:flex;flex-direction:column;gap:12px;">';
     q.pairs.forEach((p, pi) => {
-      h += `<div class="match-item" style="cursor:default;border-color:var(--border);">${pi + 1}. ${escHtml(p.left)}</div>`;
-      // Dropdown select
-      const shuffled = q._shuffled || q.pairs.map((_, i) => i);
-      let selectClass = '';
-      if (state && sel[pi] !== undefined) {
-        selectClass = sel[pi] === pi ? ' style="border-color:#4CAF50;background:#F1F8E9;"' : ' style="border-color:#F44336;background:#FFF3F0;"';
+      const isCorrect = sel[pi] === pi;
+      let rowStyle = '';
+      let icon = '';
+      if (state) {
+        if (isCorrect) {
+          rowStyle = 'border-color:#4CAF50;background:#F1F8E9;';
+          icon = '<span style="color:#4CAF50;font-weight:700;margin-left:8px;">&#10003;</span>';
+        } else {
+          rowStyle = 'border-color:#F44336;background:#FFF3F0;';
+          icon = '<span style="color:#F44336;font-weight:700;margin-left:8px;">&#10007;</span>';
+        }
       }
-      h += `<select class="match-select" data-idx="${idx}" data-pair="${pi}"${selectClass} ${state ? 'disabled' : ''}>`;
-      h += '<option value="">-- Select --</option>';
-      shuffled.forEach(si => {
-        const selected = sel[pi] === si ? ' selected' : '';
-        h += `<option value="${si}"${selected}>${escHtml(q.pairs[si].right)}</option>`;
-      });
-      h += '</select>';
+      h += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;padding:12px;border:2px solid var(--border);border-radius:6px;${rowStyle}">`;
+      // Left: Simple expression
+      h += `<div style="font-size:14px;"><span style="font-weight:700;color:var(--crimson);margin-right:6px;">${pi + 1}.</span>${escHtml(p.left)}</div>`;
+      // Right: Dropdown or result
+      h += '<div>';
+      if (!state) {
+        h += `<select class="match-select" data-idx="${idx}" data-pair="${pi}" style="width:100%;padding:8px 10px;border:2px solid var(--border);border-radius:6px;font-size:13px;background:#fff;">`;
+        h += '<option value="">-- Select Upgrade --</option>';
+        shuffled.forEach(si => {
+          const selected = sel[pi] === si ? ' selected' : '';
+          h += `<option value="${si}"${selected}>${escHtml(q.pairs[si].right)}</option>`;
+        });
+        h += '</select>';
+      } else {
+        // Show selected answer + feedback
+        const selectedText = sel[pi] !== undefined ? q.pairs[sel[pi]].right : '(no answer)';
+        h += `<div style="font-size:14px;font-weight:500;">${escHtml(selectedText)}${icon}</div>`;
+        if (!isCorrect) {
+          h += `<div style="font-size:12px;color:#2E7D32;margin-top:4px;"><strong>Correct:</strong> ${escHtml(p.right)}</div>`;
+        }
+      }
+      h += '</div></div>';
     });
-    h += '</div></div>';
-    if (state === 'wrong') {
-      h += '<div class="quiz-feedback wrong">Some matches are incorrect. Check the highlighted items.</div>';
-    } else if (state === 'correct') {
+    h += '</div>';
+    if (state === 'correct') {
       h += '<div class="quiz-feedback correct">All matched correctly!</div>';
+    } else if (state === 'wrong') {
+      const correctCount = q.pairs.filter((_, pi) => sel[pi] === pi).length;
+      h += `<div class="quiz-feedback wrong">${correctCount} / ${q.pairs.length} correct. Wrong answers show the correct match below.</div>`;
     }
     return h;
   }
