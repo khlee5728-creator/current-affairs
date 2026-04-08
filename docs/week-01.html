@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Day 01 - 경제성장 - English for Current Affairs</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -60,9 +60,10 @@
   <a href="week-15.html">Day 15</a>
 </div>
 
-<div class="container">
-  <!-- Week Header -->
-  <div class="week-header">
+<div class="slide-container">
+  <div class="slide active" data-label="Title">
+    <div class="slide-content">
+      <div class="week-header">
     <div class="week-label">Day 01</div>
     <h1>경제성장</h1>
     <div class="meta">
@@ -71,26 +72,15 @@
       <span>Grammar: To 부정사의 의미상의 주어</span>
     </div>
   </div>
-
-  <!-- Page TOC -->
-    <button class="pdf-btn" onclick="printPDF()">PDF로 저장</button>
-
-  <div class="page-toc">
-    <h3>Contents</h3>
-    <ul>
-      <li><a href="#expressions">Key Expressions</a></li>
-      <li><a href="#wordlist">Word List</a></li>
-      <li><a href="#grammar">Grammar</a></li>
-        <li><a href="#practice">Practice</a></li>
-    </ul>
+      <button class="pdf-btn" onclick="printPDF()">PDF로 저장</button>
+      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (3)<span>Slide 2-4</span></li><li data-goto="5">Word List<span>Slide 5</span></li><li data-goto="6">Grammar (1)<span>Slide 6-6</span></li><li data-goto="7">Practice<span>Slide 7</span></li></ul></div>
+    </div>
   </div>
 
-  <!-- Key Expressions -->
-  <div class="section" id="expressions">
-    <h2 class="section-title">Key Expressions</h2>
-    <button id="expand-all" style="margin-bottom:16px;padding:8px 16px;border:1px solid #E5E1DC;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;">Expand All</button>
-
-    <div class="sc-legend">
+  <div class="slide" data-label="Expression 001">
+    <div class="slide-content">
+      <h2 class="section-title">Key Expressions</h2>
+      <div class="sc-legend">
       <span class="sc-legend-title">문장성분</span>
       <span class="sc-legend-item"><span class="sc-legend-dot s"></span>Subject (S)</span>
       <span class="sc-legend-item"><span class="sc-legend-dot v"></span>Verb (V)</span>
@@ -99,8 +89,7 @@
       <span class="sc-legend-item"><span class="sc-legend-dot m"></span>Modifier (M)</span>
       <button class="sc-toggle-btn">Hide Colors</button>
     </div>
-
-    <div class="expr-card">
+      <div class="expr-card">
       <div class="expr-header">
         <span class="expr-num">001</span>
         <span class="expr-topic">경제성장</span>
@@ -117,8 +106,13 @@
         </div>
       </div>
     </div>
+    </div>
+  </div>
 
-    <div class="expr-card">
+  <div class="slide" data-label="Expression 002">
+    <div class="slide-content">
+      <h2 class="section-title">Key Expressions</h2>
+      <div class="expr-card">
       <div class="expr-header">
         <span class="expr-num">002</span>
         <span class="expr-topic">경제성장</span>
@@ -135,8 +129,13 @@
         </div>
       </div>
     </div>
+    </div>
+  </div>
 
-    <div class="expr-card">
+  <div class="slide" data-label="Expression 003">
+    <div class="slide-content">
+      <h2 class="section-title">Key Expressions</h2>
+      <div class="expr-card">
       <div class="expr-header">
         <span class="expr-num">003</span>
         <span class="expr-topic">경제성장</span>
@@ -153,12 +152,13 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 
-  <!-- Word List -->
-  <div class="section" id="wordlist">
-    <h2 class="section-title">Word List</h2>
-    <table class="word-table">
+  <div class="slide slide-scrollable" data-label="Word List">
+    <div class="slide-content">
+      <h2 class="section-title">Word List</h2>
+      <table class="word-table">
       <thead><tr><th>No.</th><th>English</th><th>Korean</th><th>Example</th></tr></thead>
       <tbody>
         <tr><td>1</td><td>distribution of wealth</td><td>부의 분배</td><td>focus on distribution of wealth</td></tr>
@@ -173,13 +173,13 @@
         <tr><td>10</td><td>the way I see it</td><td>내가 보기에는</td><td>The way I see it, they're two sides of the same coin.</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 
-  <!-- Grammar -->
-  <div class="section" id="grammar">
-    <h2 class="section-title">Grammar</h2>
-
-    <div class="grammar-block">
+  <div class="slide slide-scrollable" data-label="Grammar">
+    <div class="slide-content">
+      <h2 class="section-title">Grammar</h2>
+      <div class="grammar-block">
       <h3>To 부정사의 의미상의 주어</h3>
       <p>To 부정사의 행위 주체가 문장의 주어와 다를 때, <strong>for + 목적격</strong>을 사용하여 의미상의 주어를 나타냅니다.</p>
       <h4>기본 구조: It is + 형용사 + for + 사람 + to 동사원형</h4>
@@ -209,14 +209,20 @@
         <div class="ko">그가 그런 실수를 하다니 어리석었다.</div>
       </div>
     </div>
+    </div>
   </div>
 
-  <div class="section" id="practice">
+  <div class="slide slide-scrollable" data-label="Practice">
+    <div class="slide-content">
+      <div class="section" id="practice">
     <h2 class="section-title">Practice</h2>
     <div id="quiz-root"></div>
   </div>
+    </div>
+  </div>
+</div>
 
-  <script>
+<script>
   window.quizData = [
     { type:'fill', question:'We still have to grow the ___. Then everyone can have a bigger piece.', answer:'pie', hint:'경제 규모를 키우다' },
     { type:'fill', question:'Growth and distribution are two sides of the same ___.', answer:'coin', hint:'동전의 양면' },
@@ -231,17 +237,11 @@
   ];
   </script>
 
-  <!-- Week Nav -->
-  <div class="week-nav">
-    <a href="index.html">&larr; Home</a>
-    <a href="week-02.html">Day 02 &rarr;</a>
-  </div>
-</div>
-
 <footer class="footer">
   2026 Spring - 외국어시험 대체 강좌 (English for Current Affairs) - Korea University
 </footer>
-<script src="script.js?v=3"></script>
-<script src="quiz.js?v=3"></script>
+<script src="script.js?v=5"></script>
+<script src="quiz.js?v=5"></script>
+<script src="slide.js?v=5"></script>
 </body>
 </html>

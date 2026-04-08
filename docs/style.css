@@ -922,6 +922,137 @@ body.sc-off .sc-toggle-btn { background: var(--navy); color: #fff; border-color:
   .hero .subtitle { font-size: 15px; }
 }
 
+/* ===== Slide Mode ===== */
+.slide-container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+}
+.slide {
+  display: none;
+  min-height: calc(100vh - 120px);
+  padding: 32px 24px 80px;
+  max-width: 960px;
+  margin: 0 auto;
+  animation: slideFadeIn 0.3s ease;
+}
+.slide.active { display: block; }
+.slide.slide-scrollable { overflow-y: auto; max-height: calc(100vh - 120px); }
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide title page */
+.slide .week-header { margin-bottom: 24px; }
+.slide .slide-toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 20px;
+}
+.slide .slide-toc h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.slide .slide-toc ul { list-style: none; }
+.slide .slide-toc li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.slide .slide-toc li:hover { color: var(--crimson); }
+.slide .slide-toc li span { color: var(--text-muted); font-size: 12px; }
+
+/* Expression in slide mode: always open */
+.slide .expr-card { margin-bottom: 0; }
+.slide .expr-body { display: block !important; padding-top: 16px !important; }
+.slide .expr-toggle { display: none; }
+.slide .expr-header { cursor: default; }
+
+/* Slide nav bar */
+.slide-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 100;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+  padding: 0 24px;
+}
+.slide-nav button {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  width: 40px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+.slide-nav button:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+.slide-nav button:disabled { opacity: 0.3; cursor: default; }
+.slide-indicator {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+.slide-label {
+  font-size: 12px;
+  opacity: 0.7;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.slide-progress-bar {
+  flex: 1;
+  max-width: 200px;
+  height: 4px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.slide-progress-fill {
+  height: 100%;
+  background: var(--crimson);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Hide old elements in slide mode */
+.slide-mode .page-toc { display: none; }
+.slide-mode .container { display: none; }
+.slide-mode .footer { display: none; }
+.slide-mode .week-nav { display: none; }
+
+@media (max-width: 768px) {
+  .slide { padding: 20px 16px 80px; }
+  .slide-label { display: none; }
+  .slide-nav { gap: 10px; }
+}
+
 /* ===== PDF Save Button ===== */
 .pdf-btn {
   display: inline-flex;
@@ -949,7 +1080,11 @@ body.sc-off .sc-toggle-btn { background: var(--navy); color: #fff; border-color:
   #expand-all, .sc-toggle-btn, .sc-legend,
   #practice, .quiz-container, .quiz-progress,
   .quiz-card, .quiz-actions, .quiz-score,
-  .nav-dropdown-menu { display: none !important; }
+  .nav-dropdown-menu, .slide-nav { display: none !important; }
+
+  /* Show all slides in print */
+  .slide { display: block !important; min-height: auto; padding: 16px 0; page-break-after: auto; }
+  .slide .expr-card { break-inside: avoid; }
 
   /* Force all expression cards open */
   .expr-body { display: block !important; padding-top: 16px !important; }
