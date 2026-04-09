@@ -440,6 +440,10 @@ window.quizDataExpr = [
 window.quizDataGrammar = [
   { type:'ox', statement:'You are much more powerful than you realize.', answer:true, explanation:'비교급 강조 부사 much + 비교급(more powerful)으로 올바른 문장입니다.' },
   { type:'ox', statement:'He is the most tallest student in the class.', answer:false, explanation:'most와 -est를 동시에 사용할 수 없습니다. "the tallest"가 맞습니다.' }
+,
+  { type:'ox', statement:'He is more taller than his brother.', answer:false, explanation:'tall은 1음절이므로 -er을 사용합니다. more와 -er을 동시에 사용할 수 없습니다.' },
+  { type:'mc', question:'"You are ___ more powerful than you realize." 비교급 강조 부사로 알맞은 것은?', options:['much','very','so','too'], answer:0, explanation:'비교급을 강조할 때 much, far, even, still, a lot 등을 사용합니다.' },
+  { type:'mc', question:'"He is the tallest student ___ the class." 빈칸에 알맞은 전치사는?', options:['in','of','at','for'], answer:0, explanation:'최상급 뒤에 장소/그룹을 나타낼 때 in을 사용합니다.' }
 ];
 </script>
 
