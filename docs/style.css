@@ -979,6 +979,29 @@ body.sc-off .sc-toggle-btn { background: var(--navy); color: #fff; border-color:
 .slide .expr-toggle { display: none; }
 .slide .expr-header { cursor: default; }
 
+/* Slide mode: enlarged fonts for readability */
+.slide .section-title { font-size: 24px; }
+.slide .speech { font-size: 18px; line-height: 1.8; }
+.slide .speaker { font-size: 18px; }
+.slide .expr-topic { font-size: 17px; }
+.slide .expr-num { width: 40px; height: 40px; font-size: 14px; }
+.slide .dialogue-line { margin-bottom: 10px; }
+.slide .comparison { gap: 14px; margin-top: 16px; }
+.slide .comp-box { padding: 16px; font-size: 16px; line-height: 1.6; }
+.slide .comp-label { font-size: 12px; margin-bottom: 8px; }
+.slide .expr-note { font-size: 14px; margin-top: 12px; }
+.slide .grammar-block h3 { font-size: 20px; margin-bottom: 18px; }
+.slide .grammar-block h4 { font-size: 17px; }
+.slide .grammar-block p { font-size: 17px; line-height: 1.7; margin-bottom: 12px; }
+.slide .example-box { padding: 14px 18px; font-size: 16px; margin: 12px 0; }
+.slide .example-box .en { font-size: 17px; line-height: 1.7; }
+.slide .example-box .ko { font-size: 15px; }
+.slide .example-box .note { font-size: 13px; }
+.slide .grammar-table th, .slide .grammar-table td { font-size: 15px; padding: 10px 14px; }
+.slide .sc-s, .slide .sc-v, .slide .sc-o, .slide .sc-c, .slide .sc-m { padding: 2px 5px; }
+.slide .word-table td { font-size: 15px; padding: 12px 16px; }
+.slide .word-table th { font-size: 14px; padding: 12px 16px; }
+
 /* Slide nav bar */
 .slide-nav {
   position: fixed;

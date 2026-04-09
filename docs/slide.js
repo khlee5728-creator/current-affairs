@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function goTo(idx) {
     if (idx < 0 || idx >= total) return;
-    slides[current].classList.remove('active');
+    slides.forEach(s => s.classList.remove('active'));
     current = idx;
     slides[current].classList.add('active');
     update();
