@@ -54,7 +54,7 @@
     <div class="meta"><span>April 21, 2026</span><span>부정부패 / 현실정치 / 남북관계, 북한</span><span>Grammar: 품사와 문장구조</span></div>
   </div>
       <button class="pdf-btn" onclick="printPDF()">PDF로 저장</button>
-      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (15)<span>Slide 2-16</span></li><li data-goto="17">Word List<span>Slide 17</span></li><li data-goto="18">Grammar (6)<span>Slide 18-23</span></li><li data-goto="24">Practice<span>Slide 24</span></li></ul></div>
+      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (15)<span>Slide 2-16</span></li><li data-goto="17">Word List<span>Slide 17</span></li><li data-goto="18">Practice: Expressions<span>Slide 18</span></li><li data-goto="19">Grammar (6)<span>Slide 19-24</span></li><li data-goto="25">Practice: Grammar<span>Slide 25</span></li></ul></div>
     </div>
   </div>
 
@@ -440,6 +440,15 @@
     </div>
   </div>
 
+  <div class="slide slide-scrollable" data-label="Practice: Expressions">
+    <div class="slide-content">
+      <div class="section" id="practice-expr">
+        <h2 class="section-title">Practice: Expressions &amp; Vocabulary</h2>
+        <div id="quiz-root-expr"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="slide" data-label="Grammar 1">
     <div class="slide-content">
       <h2 class="section-title">Grammar</h2>
@@ -541,37 +550,46 @@
         <div class="ko">[명사] 집, 가정 / [형용사] 가정의 / [부사] 집으로</div>
         <div class="note">같은 단어라도 품사에 따라 의미와 역할이 달라짐</div>
       </div>
+
+  <div class="slide slide-scrollable" data-label="Practice: Grammar">
+    <div class="slide-content">
+      <div class="section" id="practice-grammar">
+        <h2 class="section-title">Practice: Grammar</h2>
+        <div id="quiz-root-grammar"></div>
+      </div>
+    </div>
+  </div>
     </div>
     </div>
   </div>
 
-  <div class="slide slide-scrollable" data-label="Practice">
-    <div class="slide-content">
-      <div class="section" id="practice">
-    <h2 class="section-title">Practice</h2>
-    <div id="quiz-root"></div>
-  </div>
-    </div>
+
   </div>
 </div>
 
+
+
+
+
 <script>
-  window.quizData = [
-    { type:'fill', question:'Various kinds of corruption are ___ in our society.', answer:'rampant', hint:'만연한' },
-    { type:'fill', question:'Politicians take corporate payouts under the ___.', answer:'table', hint:'은밀하게' },
-    { type:'fill', question:'The government should help defectors ___ into our society.', answer:'assimilate', hint:'동화되다' },
-    { type:'mc', question:'"far-reaching"의 의미는?', options:['영향력이 광범위한','매우 먼','좁은 범위의','일시적인'], answer:0 },
-    { type:'mc', question:'"moral fiber"의 의미는?', options:['도덕적 자질','물리적 힘','경제적 능력','법적 권한'], answer:0 },
-    { type:'match', pairs:[{left:'The level of the president is determined by the people.',right:'The president is only as good as the people who vote for him.'},{left:"Don't let a few corrupt policemen ruin your perception.",right:"Don't let a few bad apples ruin your perception."},{left:'North Korean defectors should become complete members.',right:'North Korean defectors should become full-fledged members.'}] },
-    { type:'ox', statement:'"Tom runs everyday." - 이 문장은 1형식(주어+동사+수식어)이다.', answer:true, explanation:'주어(Tom) + 동사(runs) + 수식어(everyday)로 1형식입니다.' },
-    { type:'ox', statement:'"He is a teacher." - 이 문장은 3형식(주어+동사+목적어)이다.', answer:false, explanation:'주어(He) + 동사(is) + 보어(a teacher)로 2형식입니다.' },
-    { type:'fill', question:'Any form of reunification that puts the four superpowers at ___ would be unthinkable.', answer:'odds', hint:'대립시키다' },
-    { type:'mc', question:'"repatriate"의 의미는?', options:['본국으로 송환하다','이민 보내다','체포하다','석방하다'], answer:0 }
-  ];
-  </script>
+window.quizDataExpr = [
+  { type:'fill', question:'Various kinds of corruption are ___ in our society.', answer:'rampant', hint:'만연한' },
+  { type:'fill', question:'Politicians take corporate payouts under the ___.', answer:'table', hint:'은밀하게' },
+  { type:'fill', question:'The government should help defectors ___ into our society.', answer:'assimilate', hint:'동화되다' },
+  { type:'mc', question:'"far-reaching"의 의미는?', options:['영향력이 광범위한','매우 먼','좁은 범위의','일시적인'], answer:0 },
+  { type:'mc', question:'"moral fiber"의 의미는?', options:['도덕적 자질','물리적 힘','경제적 능력','법적 권한'], answer:0 },
+  { type:'match', pairs:[{left:'The level of the president is determined by the people.',right:'The president is only as good as the people who vote for him.'},{left:"Don't let a few corrupt policemen ruin your perception.",right:"Don't let a few bad apples ruin your perception."},{left:'North Korean defectors should become complete members.',right:'North Korean defectors should become full-fledged members.'}] },
+  { type:'fill', question:'Any form of reunification that puts the four superpowers at ___ would be unthinkable.', answer:'odds', hint:'대립시키다' },
+  { type:'mc', question:'"repatriate"의 의미는?', options:['본국으로 송환하다','이민 보내다','체포하다','석방하다'], answer:0 }
+];
+window.quizDataGrammar = [
+  { type:'ox', statement:'"Tom runs everyday." - 이 문장은 1형식(주어+동사+수식어)이다.', answer:true, explanation:'주어(Tom) + 동사(runs) + 수식어(everyday)로 1형식입니다.' },
+  { type:'ox', statement:'"He is a teacher." - 이 문장은 3형식(주어+동사+목적어)이다.', answer:false, explanation:'주어(He) + 동사(is) + 보어(a teacher)로 2형식입니다.' }
+];
+</script>
 
 <footer class="footer">2026 Spring - 외국어시험 대체 강좌 (English for Current Affairs) - Korea University</footer>
 <script src="script.js?v=5"></script>
-<script src="quiz.js?v=5"></script>
+<script src="quiz.js?v=7"></script>
 <script src="slide.js?v=6"></script>
 </body></html>

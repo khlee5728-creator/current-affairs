@@ -53,7 +53,7 @@
     <div class="meta"><span>May 21, 2026</span><span>스마트폰 중독 / 인터넷 / 학교폭력</span><span>Grammar: 부사</span></div>
   </div>
       <button class="pdf-btn" onclick="printPDF()">PDF로 저장</button>
-      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (10)<span>Slide 2-11</span></li><li data-goto="12">Word List<span>Slide 12</span></li><li data-goto="13">Grammar (3)<span>Slide 13-15</span></li><li data-goto="16">Practice<span>Slide 16</span></li></ul></div>
+      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (10)<span>Slide 2-11</span></li><li data-goto="12">Word List<span>Slide 12</span></li><li data-goto="13">Practice: Expressions<span>Slide 13</span></li><li data-goto="14">Grammar (3)<span>Slide 14-16</span></li><li data-goto="17">Practice: Grammar<span>Slide 17</span></li></ul></div>
     </div>
   </div>
 
@@ -264,6 +264,15 @@
     </div>
   </div>
 
+  <div class="slide slide-scrollable" data-label="Practice: Expressions">
+    <div class="slide-content">
+      <div class="section" id="practice-expr">
+        <h2 class="section-title">Practice: Expressions &amp; Vocabulary</h2>
+        <div id="quiz-root-expr"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="slide" data-label="Grammar 1">
     <div class="slide-content">
       <h2 class="section-title">Grammar</h2>
@@ -288,37 +297,46 @@
       <h2 class="section-title">Grammar</h2>
       <div class="grammar-block"><h3>부사의 수식 대상</h3><p>부사는 동사, 형용사, 다른 부사를 수식합니다.</p>
       <div class="example-box"><div class="en">She runs quickly. (동사 수식) / It's very hot. (형용사 수식) / He runs very quickly. (부사 수식)</div><div class="ko">그녀는 빠르게 달린다. / 매우 덥다. / 그는 매우 빠르게 달린다.</div><div class="note">부사는 동사, 형용사, 다른 부사를 모두 수식할 수 있습니다.</div></div>
+
+  <div class="slide slide-scrollable" data-label="Practice: Grammar">
+    <div class="slide-content">
+      <div class="section" id="practice-grammar">
+        <h2 class="section-title">Practice: Grammar</h2>
+        <div id="quiz-root-grammar"></div>
+      </div>
+    </div>
+  </div>
     </div>
     </div>
   </div>
 
-  <div class="slide slide-scrollable" data-label="Practice">
-    <div class="slide-content">
-      <div class="section" id="practice">
-    <h2 class="section-title">Practice</h2>
-    <div id="quiz-root"></div>
-  </div>
-    </div>
+
   </div>
 </div>
 
+
+
+
+
 <script>
-  window.quizData = [
-    { type:'fill', question:'Millions of Koreans are ___ to their smartphone screens.', answer:'glued', hint:'달라붙은, 눈을 떼지 못하는' },
-    { type:'fill', question:'Children can develop ___ symptoms from smartphone overuse.', answer:'withdrawal', hint:'금단 증상' },
-    { type:'fill', question:'Students should not turn a blind ___ to bullying.', answer:'eye', hint:'눈을 감다, 모른 척하다' },
-    { type:'mc', question:'"fraudulent"의 의미는?', options:['사기의, 부정한','합법적인','인기있는','유용한'], answer:0 },
-    { type:'mc', question:'"self-restraint"의 의미는?', options:['자제력','자신감','자존심','자기표현'], answer:0 },
-    { type:'match', pairs:[{left:'Invading privacy is unavoidable.',right:'Privacy violations are unavoidable.'},{left:'Handle hateful comments by ignoring them.',right:'Handle trolls by ignoring them.'},{left:'Harassing people online is a major problem.',right:'Cyber bullying is a major problem.'}] },
-    { type:'ox', statement:'She speaks English fluently.', answer:true, explanation:'부사(fluently)가 동사(speaks)를 올바르게 수식합니다.' },
-    { type:'ox', statement:'He runs very fastly.', answer:false, explanation:'fast는 형용사와 부사가 같은 형태입니다. "very fast"가 맞습니다. fastly는 없는 단어입니다.' },
-    { type:'fill', question:'It\'s hard for a child to develop self-___ on his own.', answer:'restraint', hint:'자제력' },
-    { type:'mc', question:'"disrupt"의 의미는?', options:['교란하다, 방해하다','보호하다','연결하다','강화하다'], answer:0 }
-  ];
-  </script>
+window.quizDataExpr = [
+  { type:'fill', question:'Millions of Koreans are ___ to their smartphone screens.', answer:'glued', hint:'달라붙은, 눈을 떼지 못하는' },
+  { type:'fill', question:'Children can develop ___ symptoms from smartphone overuse.', answer:'withdrawal', hint:'금단 증상' },
+  { type:'fill', question:'Students should not turn a blind ___ to bullying.', answer:'eye', hint:'눈을 감다, 모른 척하다' },
+  { type:'mc', question:'"fraudulent"의 의미는?', options:['사기의, 부정한','합법적인','인기있는','유용한'], answer:0 },
+  { type:'mc', question:'"self-restraint"의 의미는?', options:['자제력','자신감','자존심','자기표현'], answer:0 },
+  { type:'match', pairs:[{left:'Invading privacy is unavoidable.',right:'Privacy violations are unavoidable.'},{left:'Handle hateful comments by ignoring them.',right:'Handle trolls by ignoring them.'},{left:'Harassing people online is a major problem.',right:'Cyber bullying is a major problem.'}] },
+  { type:'fill', question:'It\'s hard for a child to develop self-___ on his own.', answer:'restraint', hint:'자제력' },
+  { type:'mc', question:'"disrupt"의 의미는?', options:['교란하다, 방해하다','보호하다','연결하다','강화하다'], answer:0 }
+];
+window.quizDataGrammar = [
+  { type:'ox', statement:'She speaks English fluently.', answer:true, explanation:'부사(fluently)가 동사(speaks)를 올바르게 수식합니다.' },
+  { type:'ox', statement:'He runs very fastly.', answer:false, explanation:'fast는 형용사와 부사가 같은 형태입니다. "very fast"가 맞습니다. fastly는 없는 단어입니다.' }
+];
+</script>
 
 <footer class="footer">2026 Spring - 외국어시험 대체 강좌 (English for Current Affairs) - Korea University</footer>
 <script src="script.js?v=5"></script>
-<script src="quiz.js?v=5"></script>
+<script src="quiz.js?v=7"></script>
 <script src="slide.js?v=6"></script>
 </body></html>

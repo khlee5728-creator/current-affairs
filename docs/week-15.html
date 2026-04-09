@@ -53,7 +53,7 @@
     <div class="meta"><span>May 28, 2026</span><span>연예인 / SNS / 자율주행차 / 생명과학 / 인공지능</span><span>Grammar: 부정대명사</span></div>
   </div>
       <button class="pdf-btn" onclick="printPDF()">PDF로 저장</button>
-      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (18)<span>Slide 2-19</span></li><li data-goto="20">Word List<span>Slide 20</span></li><li data-goto="21">Grammar (4)<span>Slide 21-24</span></li><li data-goto="25">Practice<span>Slide 25</span></li></ul></div>
+      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (18)<span>Slide 2-19</span></li><li data-goto="20">Word List<span>Slide 20</span></li><li data-goto="21">Practice: Expressions<span>Slide 21</span></li><li data-goto="22">Grammar (4)<span>Slide 22-25</span></li><li data-goto="26">Practice: Grammar<span>Slide 26</span></li></ul></div>
     </div>
   </div>
 
@@ -417,6 +417,15 @@
     </div>
   </div>
 
+  <div class="slide slide-scrollable" data-label="Practice: Expressions">
+    <div class="slide-content">
+      <div class="section" id="practice-expr">
+        <h2 class="section-title">Practice: Expressions &amp; Vocabulary</h2>
+        <div id="quiz-root-expr"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="slide" data-label="Grammar 1">
     <div class="slide-content">
       <h2 class="section-title">Grammar</h2>
@@ -454,37 +463,46 @@
       <h2 class="section-title">Grammar</h2>
       <div class="grammar-block"><h3>조건문에서의 any</h3><p>조건문에서는 any를 사용합니다.</p>
       <div class="example-box"><div class="en">Let me know if there are any changes.</div><div class="ko">변경 사항이 있으면 알려주세요.</div><div class="note">if 조건문에서 any 사용</div></div>
+
+  <div class="slide slide-scrollable" data-label="Practice: Grammar">
+    <div class="slide-content">
+      <div class="section" id="practice-grammar">
+        <h2 class="section-title">Practice: Grammar</h2>
+        <div id="quiz-root-grammar"></div>
+      </div>
+    </div>
+  </div>
     </div>
     </div>
   </div>
 
-  <div class="slide slide-scrollable" data-label="Practice">
-    <div class="slide-content">
-      <div class="section" id="practice">
-    <h2 class="section-title">Practice</h2>
-    <div id="quiz-root"></div>
-  </div>
-    </div>
+
   </div>
 </div>
 
+
+
+
+
 <script>
-  window.quizData = [
-    { type:'fill', question:'Celebrities are always in the public ___.', answer:'eye', hint:'대중의 주목을 받는' },
-    { type:'fill', question:'Their voices carry more ___ than ordinary people\'s.', answer:'weight', hint:'영향력' },
-    { type:'fill', question:'New advances will open many ___ for patients.', answer:'doors', hint:'기회를 열다' },
-    { type:'mc', question:'"digital footprint"의 의미는?', options:['인터넷 흔적','디지털 기기','소셜 미디어','개인 정보'], answer:0 },
-    { type:'mc', question:'"liability issue"의 의미는?', options:['책임 소재 문제','기술적 문제','비용 문제','안전 문제'], answer:0 },
-    { type:'match', pairs:[{left:'Voices of celebrities can be more influential.',right:'Voices of celebrities carry more weight.'},{left:'That sounds unrealistic.',right:'That sounds straight out of a sci-fi movie.'},{left:'If the technology is used by bad people...',right:'If the technology ends up in the wrong hands...'}] },
-    { type:'ox', statement:'I have some money.', answer:true, explanation:'긍정문에서 some을 올바르게 사용했습니다.' },
-    { type:'ox', statement:'Do you have some questions?', answer:false, explanation:'의문문에서는 일반적으로 any를 사용합니다. "Do you have any questions?"가 맞습니다. (단, 권유/부탁 시에는 some 가능)' },
-    { type:'fill', question:'Some fear that scientists are trying too hard to play ___.', answer:'God', hint:'신의 영역에 도전하다' },
-    { type:'mc', question:'"era of oversharing"의 의미는?', options:['과잉 공유의 시대','정보 부족의 시대','개인정보 보호의 시대','디지털 혁명의 시대'], answer:0 }
-  ];
-  </script>
+window.quizDataExpr = [
+  { type:'fill', question:'Celebrities are always in the public ___.', answer:'eye', hint:'대중의 주목을 받는' },
+  { type:'fill', question:'Their voices carry more ___ than ordinary people\'s.', answer:'weight', hint:'영향력' },
+  { type:'fill', question:'New advances will open many ___ for patients.', answer:'doors', hint:'기회를 열다' },
+  { type:'mc', question:'"digital footprint"의 의미는?', options:['인터넷 흔적','디지털 기기','소셜 미디어','개인 정보'], answer:0 },
+  { type:'mc', question:'"liability issue"의 의미는?', options:['책임 소재 문제','기술적 문제','비용 문제','안전 문제'], answer:0 },
+  { type:'match', pairs:[{left:'Voices of celebrities can be more influential.',right:'Voices of celebrities carry more weight.'},{left:'That sounds unrealistic.',right:'That sounds straight out of a sci-fi movie.'},{left:'If the technology is used by bad people...',right:'If the technology ends up in the wrong hands...'}] },
+  { type:'fill', question:'Some fear that scientists are trying too hard to play ___.', answer:'God', hint:'신의 영역에 도전하다' },
+  { type:'mc', question:'"era of oversharing"의 의미는?', options:['과잉 공유의 시대','정보 부족의 시대','개인정보 보호의 시대','디지털 혁명의 시대'], answer:0 }
+];
+window.quizDataGrammar = [
+  { type:'ox', statement:'I have some money.', answer:true, explanation:'긍정문에서 some을 올바르게 사용했습니다.' },
+  { type:'ox', statement:'Do you have some questions?', answer:false, explanation:'의문문에서는 일반적으로 any를 사용합니다. "Do you have any questions?"가 맞습니다. (단, 권유/부탁 시에는 some 가능)' }
+];
+</script>
 
 <footer class="footer">2026 Spring - 외국어시험 대체 강좌 (English for Current Affairs) - Korea University</footer>
 <script src="script.js?v=5"></script>
-<script src="quiz.js?v=5"></script>
+<script src="quiz.js?v=7"></script>
 <script src="slide.js?v=6"></script>
 </body></html>

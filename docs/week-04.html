@@ -54,7 +54,7 @@
     <div class="meta"><span>April 16, 2026</span><span>노사관계 / 한국 경제의 위상 / 어려움</span><span>Grammar: 현재진행형</span></div>
   </div>
       <button class="pdf-btn" onclick="printPDF()">PDF로 저장</button>
-      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (15)<span>Slide 2-16</span></li><li data-goto="17">Word List<span>Slide 17</span></li><li data-goto="18">Grammar (7)<span>Slide 18-24</span></li><li data-goto="25">Practice<span>Slide 25</span></li></ul></div>
+      <div class="slide-toc"><h3>Contents</h3><ul><li data-goto="2">Key Expressions (15)<span>Slide 2-16</span></li><li data-goto="17">Word List<span>Slide 17</span></li><li data-goto="18">Practice: Expressions<span>Slide 18</span></li><li data-goto="19">Grammar (7)<span>Slide 19-25</span></li><li data-goto="26">Practice: Grammar<span>Slide 26</span></li></ul></div>
     </div>
   </div>
 
@@ -445,6 +445,15 @@
     </div>
   </div>
 
+  <div class="slide slide-scrollable" data-label="Practice: Expressions">
+    <div class="slide-content">
+      <div class="section" id="practice-expr">
+        <h2 class="section-title">Practice: Expressions &amp; Vocabulary</h2>
+        <div id="quiz-root-expr"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="slide" data-label="Grammar 1">
     <div class="slide-content">
       <h2 class="section-title">Grammar</h2>
@@ -545,6 +554,15 @@
         <div class="en">I know what you mean. (O)</div>
         <div class="ko">나는 네가 무슨 말 하는지 안다.</div>
       </div>
+
+  <div class="slide slide-scrollable" data-label="Practice: Grammar">
+    <div class="slide-content">
+      <div class="section" id="practice-grammar">
+        <h2 class="section-title">Practice: Grammar</h2>
+        <div id="quiz-root-grammar"></div>
+      </div>
+    </div>
+  </div>
       <div class="example-box">
         <div class="en">I am knowing what you mean. (X)</div>
         <div class="ko">상태 동사는 진행형 불가</div>
@@ -558,33 +576,33 @@
     </div>
   </div>
 
-  <div class="slide slide-scrollable" data-label="Practice">
-    <div class="slide-content">
-      <div class="section" id="practice">
-    <h2 class="section-title">Practice</h2>
-    <div id="quiz-root"></div>
-  </div>
-    </div>
+
   </div>
 </div>
 
+
+
+
+
 <script>
-  window.quizData = [
-    { type:'fill', question:'Business owners and laborers are engaged in a tug of ___ over minimum wage.', answer:'war', hint:'줄다리기' },
-    { type:'fill', question:'Korea rose from the ___ of war to become so advanced.', answer:'ashes', hint:'잿더미에서 일어나다' },
-    { type:'fill', question:'Many indebted families are sitting on a ticking time ___.', answer:'bomb', hint:'시한폭탄' },
-    { type:'mc', question:'"disposable income"의 의미는?', options:['가처분 소득','총 소득','세전 소득','순이익'], answer:0 },
-    { type:'mc', question:'"sandwiched between"의 의미는?', options:['사이에 끼인','앞서가는','뒤처진','경쟁하는'], answer:0 },
-    { type:'match', pairs:[{left:'Companies resort to firing employees.',right:'Companies resort to terminating employees.'},{left:'Korea has become more famous.',right:"Korea's international standing has been raised."},{left:'Household debt might cause another crisis.',right:'Household debt might spark another crisis.'}] },
-    { type:'ox', statement:'More and more people are becoming vegetarian.', answer:true, explanation:'변화하는 추세를 나타내는 현재진행형으로 올바릅니다.' },
-    { type:'ox', statement:'I am knowing what you mean.', answer:false, explanation:'know는 상태동사(stative verb)이므로 진행형 불가. "I know what you mean."이 맞습니다.' },
-    { type:'fill', question:'Chinese companies are eating ___ at the market share of Korean competitors.', answer:'away', hint:'잠식하다' },
-    { type:'mc', question:'"get the economy back on track"의 의미는?', options:['경제를 정상 궤도에 올리다','경제를 축소하다','수출을 늘리다','세금을 인상하다'], answer:0 }
-  ];
-  </script>
+window.quizDataExpr = [
+  { type:'fill', question:'Business owners and laborers are engaged in a tug of ___ over minimum wage.', answer:'war', hint:'줄다리기' },
+  { type:'fill', question:'Korea rose from the ___ of war to become so advanced.', answer:'ashes', hint:'잿더미에서 일어나다' },
+  { type:'fill', question:'Many indebted families are sitting on a ticking time ___.', answer:'bomb', hint:'시한폭탄' },
+  { type:'mc', question:'"disposable income"의 의미는?', options:['가처분 소득','총 소득','세전 소득','순이익'], answer:0 },
+  { type:'mc', question:'"sandwiched between"의 의미는?', options:['사이에 끼인','앞서가는','뒤처진','경쟁하는'], answer:0 },
+  { type:'match', pairs:[{left:'Companies resort to firing employees.',right:'Companies resort to terminating employees.'},{left:'Korea has become more famous.',right:"Korea's international standing has been raised."},{left:'Household debt might cause another crisis.',right:'Household debt might spark another crisis.'}] },
+  { type:'fill', question:'Chinese companies are eating ___ at the market share of Korean competitors.', answer:'away', hint:'잠식하다' },
+  { type:'mc', question:'"get the economy back on track"의 의미는?', options:['경제를 정상 궤도에 올리다','경제를 축소하다','수출을 늘리다','세금을 인상하다'], answer:0 }
+];
+window.quizDataGrammar = [
+  { type:'ox', statement:'More and more people are becoming vegetarian.', answer:true, explanation:'변화하는 추세를 나타내는 현재진행형으로 올바릅니다.' },
+  { type:'ox', statement:'I am knowing what you mean.', answer:false, explanation:'know는 상태동사(stative verb)이므로 진행형 불가. "I know what you mean."이 맞습니다.' }
+];
+</script>
 
 <footer class="footer">2026 Spring - 외국어시험 대체 강좌 (English for Current Affairs) - Korea University</footer>
 <script src="script.js?v=5"></script>
-<script src="quiz.js?v=5"></script>
+<script src="quiz.js?v=7"></script>
 <script src="slide.js?v=6"></script>
 </body></html>
