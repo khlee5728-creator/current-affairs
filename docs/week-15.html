@@ -505,6 +505,12 @@ window.quizDataGrammar = [
   { type:'ox', statement:'I don't have some money.', answer:false, explanation:'부정문에서는 some이 아닌 any를 사용합니다. "I don't have any money."가 맞습니다.' },
   { type:'mc', question:'"Would you like ___ coffee?" 빈칸에 알맞은 것은?', options:['some','any','no','every'], answer:0, explanation:'권유의 의문문에서는 긍정적 답변을 기대하므로 some을 사용합니다.' },
   { type:'mc', question:'"___ book will do." 빈칸에 알맞은 것은?', options:['Any','Some','No','Every'], answer:0, explanation:'긍정문에서 any는 "어떤 ~이라도"의 의미입니다.' }
+,
+  { type:'ox', statement:'Any book will do.', answer:true, explanation:'긍정문에서 any는 "어떤 ~이라도"의 의미로 올바릅니다.' },
+  { type:'ox', statement:'Are there some eggs in the fridge?', answer:false, explanation:'있는지 확인하는 의문문에서는 any를 사용합니다.' },
+  { type:'mc', question:'"Can you give me ___ sugar?" 빈칸에 알맞은 것은?', options:['some','any','no','every'], answer:0, explanation:'부탁의 의문문에서는 some.' },
+  { type:'mc', question:'"Let me know if there are ___ changes." 빈칸에 알맞은 것은?', options:['any','some','no','every'], answer:0, explanation:'조건문에서는 any를 사용합니다.' },
+  { type:'fill', question:'I did not eat ___ food. (부정문: 전혀 ~없는)', answer:'any', hint:'부정문에서 some 대신 any' }
 ];
 </script>
 
