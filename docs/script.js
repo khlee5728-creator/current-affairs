@@ -42,14 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdown.querySelector('.nav-dropdown-menu')?.addEventListener('click', (e) => e.stopPropagation());
   }
 
-  // Sentence component color toggle
-  const scToggle = document.querySelector('.sc-toggle-btn');
-  if (scToggle) {
-    scToggle.addEventListener('click', () => {
+  // Sentence component color toggle (supports multiple buttons synced)
+  const scToggles = document.querySelectorAll('.sc-toggle-btn');
+  scToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
       document.body.classList.toggle('sc-off');
-      scToggle.textContent = document.body.classList.contains('sc-off') ? 'Show Colors' : 'Hide Colors';
+      const label = document.body.classList.contains('sc-off') ? 'Show Colors' : 'Hide Colors';
+      scToggles.forEach(b => { b.textContent = label; });
     });
-  }
+  });
 
   // PDF save
   window.printPDF = function() {
