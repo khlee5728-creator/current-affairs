@@ -1,3 +1,10 @@
 .claude/
 miterm exam/
+midterm exam/
+midterm exam submit/
 midterm_extracted.txt
+submissions_extracted.json
+grading_debug.json
+test_pymupdf.txt
+day7_ppt.txt
+grade_midterm.py

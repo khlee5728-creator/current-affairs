@@ -660,6 +660,35 @@ body.sc-off .sc-c, body.sc-off .sc-m {
 body.sc-off .sc-s::after, body.sc-off .sc-v::after, body.sc-off .sc-o::after,
 body.sc-off .sc-c::after, body.sc-off .sc-m::after { display: none; }
 
+/* ===== Subordinate Clause Wrapper (명사절 등) ===== */
+/* 절 전체가 어떤 문장성분 역할을 하는지 대괄호와 라벨로 표시 */
+/* 라벨은 Unicode 위첨자(ᴼ ˢ ᶜ ᴹ)를 사용해 자연스럽게 작게 표시 */
+.sc-clause {
+  display: inline;
+  padding: 0 1px;
+}
+.sc-clause::before {
+  content: '[';
+  font-weight: 700;
+  margin-right: 1px;
+}
+.sc-clause::after {
+  font-weight: 700;
+  margin-left: 1px;
+}
+.sc-clause-o::before { color: #2E7D32; }
+.sc-clause-o::after  { content: ']\1D3C'; color: #2E7D32; }
+.sc-clause-s::before { color: #1565C0; }
+.sc-clause-s::after  { content: ']\02E2'; color: #1565C0; }
+.sc-clause-c::before { color: #6A1B9A; }
+.sc-clause-c::after  { content: ']\1D9C'; color: #6A1B9A; }
+.sc-clause-m::before { color: #E65100; }
+.sc-clause-m::after  { content: ']\1D39'; color: #E65100; }
+
+/* Hide Colors 토글 시 brackets/label 숨김 */
+body.sc-off .sc-clause::before,
+body.sc-off .sc-clause::after { display: none; }
+
 /* Legend */
 .sc-legend {
   display: flex;
